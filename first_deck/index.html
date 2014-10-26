@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Phsycological test</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Phsycological test">
+  <meta name="author" content="Carlo Bonini">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/logo.png">
+  </aside>
+  <hgroup class="auto-fadein">
+    <h1>Phsycological test</h1>
+    <h2>Prediction on your life</h2>
+    <p>Carlo Bonini<br/>26/10/12014</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Phsycological prediction</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Goal:</li>
+</ol>
+
+<ul>
+<li>Make a simple shiny app that predict wether or not you&#39;re doing great in your life </li>
+<li>Based on 6 question on your daily life</li>
+</ul>
+
+<ol>
+<li>The output </li>
+</ol>
+
+<ul>
+<li>Chart showing the distribution of the answers</li>
+<li>Reccomandations based on the answer. </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Based on the data provided by the user R run quite a lot <em>if-else</em> statement and then gives you the  text     output</li>
+<li>the overall process works like this:</li>
+<li><p>You answer the question</p>
+
+<ul>
+<li>How well would you describe yourself in terms of job success, on a scale 1-7?</li>
+<li>How many times per week do you see your girlfriend/boyfriend/wife/husband in a week and speak truly, on a         scale 1-7?</li>
+<li>How often per week you managed to see your friends, on a scale 1-7?</li>
+<li>How many times per week do you train in the gym or make sports outside, on a scale 1-7?</li>
+<li>how many times per week do you drink less than two beer/any other alcohol, on a scale 1-7?</li>
+<li>how many times per week do you consider what you are doing as helpful to someone, on a scale 1-7?</li>
+</ul></li>
+</ul>
+
+<pre><code></code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Example</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Then based on the answers, (<em>input</em> here in the code chunks is an array of possible answers) it gives you an advice on your life.</li>
+</ul>
+
+<pre><code class="r">input&lt;-as.data.frame(c(3,6,5,6,7,6))
+rownames(input)&lt;-c(&quot;id1&quot;,&quot;id2&quot;,&quot;id3&quot;,&quot;id4&quot;,&quot;id5&quot;,&quot;id6&quot;)
+input&lt;-as.data.frame(t(input))
+if (input$id1&lt;3.5&amp;input$id2&lt;3.5&amp;input$id3&lt;3.5&amp;input$id4&lt;3.5&amp;input$id6&lt;3.5){
+        &quot;You&#39;re one of those who underestimate themself. My personal advice
+        is that you start believe in yourself and give to your life a pathway  &quot;
+      } else {
+        &quot;overall you&#39;re doing fine but remember trying to be great in something you do.&quot;
+      }
+</code></pre>
+
+<pre><code>## [1] &quot;overall you&#39;re doing fine but remember trying to be great in something you do.&quot;
+</code></pre>
+
+<p>as you can see the final reccomendation is simple and neat.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Charts and future development</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>There is also a chart showing the distribution of your answers</li>
+</ul>
+
+<p><img src="figure/unnamed-chunk-2.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Conclusion</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The code chunks in these slides is only a small part of the real algorithm, that due to its length, I wasn&#39;t able to provide it complete.</li>
+<li>In the future the code would be comprehensive of all the possible answers and combination of them, which are  possible_reccomendations =823543!!</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Phsycological prediction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Introduction'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Example'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Charts and future development'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Conclusion'>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
